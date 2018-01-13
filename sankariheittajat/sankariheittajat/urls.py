@@ -19,5 +19,11 @@ from mainsite import views
 
 urlpatterns = [
     path('', views.index),
+    path('jasenyys/', views.jasenyys),
+    path('kalenteri/', views.kalenteri),
+    path('keskustelu/', views.keskustelu),
+    path('seura/saannot/', views.saannot),
+    path('seura/', views.seura),
+    path ('uutiset/', views.uutiset),
     path('admin/', admin.site.urls),
 ]

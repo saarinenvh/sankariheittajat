@@ -1,4 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>ETUSIVU</h1>
+{% load static %}
+<div id = 'otsikko'>
+  <img src = "{% static "images/logo.png" %}" height = '100'></a>
+  <h3>Sankariheittoja vuodesta 2017</h3>
+</div>
+<div class="col-lg-12">
+  <h4>Uutiset</h4>
+  <hr />
+
+{% if uutiset %}
+  {% for uutiset in uutiset %}
+  <div class = "uutinen">
+    <h3>{{ uutiset.aihe }}</h3>
+    <p class = 'lead'> {{ uutiset.uutinen }}</p>
+
+  </div>
+
+  {% endfor %}
+{% else %}
+  <p>Ei uutisia.</p>
+{% endif %}
+</div>
 {% endblock %}

@@ -1,2 +1,3 @@
-/sankariheittajat/__psycache__/
-
+sankariheittajat/__pycache__/
+__pycache/
+*.pyc

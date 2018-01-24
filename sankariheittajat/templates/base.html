@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <title>FGS Sankariheittäjät</title>
   </head>
 
@@ -19,7 +21,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#"><img src = "{% static "images/logo.png" %}" height=80px></a>
+  <a class="navbar-brand" href="#"><img src = "{% static "images/logo.png" %}" height=80px>FGS Sankariheittäjät</a>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
@@ -72,15 +74,58 @@
   <div class = "jumbotron">
     {% block content %}
     {% endblock %}
+    <div class="row">
+    <div class = "uutiset ">
+      <h2 class = "text-center">Viimeisimmät uutiset</h2>
+<hr>
+      <div class = "uutinen">
+
+        {% if uutiset %}
+        {% for uutiset in uutiset %}
+              <h3>{{ uutiset.aihe }}</h3>
+              <p class = "text-truncate">{{ uutiset.uutinen }} <br /></be><a href="#">Lue lisää</a></p>
+              <div>
+                  <span class="badge badge-success">{{ uutiset.aika }}</span><div class="pull-right"><span class="label">{{ uutiset.kirjoittaja }}</span></div>
+
+              </div>
+              <hr />
+          {% endfor %}
+        {% else %}
+          <p>Ei uutisia.</p>
+        {% endif %}
+          </div>
+          <hr />
+          <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+        </div>
+
+    </div>
   </div>
 </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-
+<div class="footer">&nbsp
+</div>
   </body>
 </html>

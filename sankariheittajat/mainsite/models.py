@@ -12,4 +12,7 @@ class uutiset(models.Model):
     def __str__(self):
         return '%s' % (self.aihe)
 
+    class Meta:
+        ordering = ['aika']
+
 # Create your models here.

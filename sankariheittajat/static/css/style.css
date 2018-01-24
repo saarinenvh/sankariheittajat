@@ -1,0 +1,17 @@
+#logo {
+  display: inline-block;
+}
+
+#slogan.display-4{
+  display: inline-block;
+  margin-left: 50px;
+}
+
+.otsikko {
+  width: 100%;
+}
+
+body {
+  background-image: url("../images/tausta.png")
+
+}
